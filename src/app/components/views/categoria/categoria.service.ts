@@ -18,13 +18,23 @@ export class CategoriaService {
   ) { }
 
   findAll():Observable<Categoria[]> {
-    const url = `${this.baseUrl}/categorias`
-    return this.http.get<Categoria[]>(url)
+    const url = `${this.baseUrl}/categorias`;
+    return this.http.get<Categoria[]>(url);
+  }
+
+  findById(id : String): Observable<Categoria>{
+    const url = `${this.baseUrl}/categorias/${id}`;
+    return this.http.get<Categoria>(url);
   }
 
   create(categoria: Categoria): Observable<Categoria>{
-    const url = `${this.baseUrl}/categorias`
+    const url = `${this.baseUrl}/categorias`;
     return this.http.post<Categoria>(url, categoria);
+  }
+
+  delete(id : String): Observable<void>{
+    const url = `${this.baseUrl}/categorias/${id}`;
+    return this.http.delete<void>(url);
   }
 
   mensagem(string : String): void{
@@ -32,6 +42,6 @@ export class CategoriaService {
       horizontalPosition: 'end',
       verticalPosition: 'top',
       duration: 3000
-    })
+    });
   }
 }
