@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   //baseUrl: 'http://localhost:8080' // Quando quiser utilizar pela maquina local
-  baseUrl: 'https://bookstore-api-dsn.herokuapp.com/'
+  baseUrl: 'https://bookstore-api-dsn.herokuapp.com'
 };
 
 /*
