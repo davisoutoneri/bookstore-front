@@ -13,6 +13,7 @@ import { HomeComponent } from './components/views/home/home.component';
 import { AllSharedMaterialsModule } from './sharing/all-materials/all-shared-materials/all-shared-materials.module';
 import { CategoriaCreateComponent } from './components/views/categoria/categoria-create/categoria-create.component';
 import { CategoriaDeleteComponent } from './components/views/categoria/categoria-delete/categoria-delete.component';
+import { CategoriaUpdateComponent } from './components/views/categoria/categoria-update/categoria-update.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { CategoriaDeleteComponent } from './components/views/categoria/categoria
     HomeComponent,
     CategoriaReadComponent,
     CategoriaCreateComponent,
-    CategoriaDeleteComponent
+    CategoriaDeleteComponent,
+    CategoriaUpdateComponent
   ],
   imports: [
     BrowserModule,
