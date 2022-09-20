@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { Livro } from '../livro.model';
 import { LivroService } from '../livro.service';
+import { Livro } from './../livro.model';
 
 @Component({
-  selector: 'app-livro-delete',
-  templateUrl: './livro-delete.component.html',
-  styleUrls: ['./livro-delete.component.css']
+  selector: 'app-livro-read',
+  templateUrl: './livro-read.component.html',
+  styleUrls: ['./livro-read.component.css']
 })
-export class LivroDeleteComponent implements OnInit {
+export class LivroReadComponent implements OnInit {
 
   id_categoria: String = ''
 
@@ -24,7 +24,7 @@ export class LivroDeleteComponent implements OnInit {
     private service: LivroService,
     private route: ActivatedRoute,
     private router: Router  
-  ) { }
+    ) { }
 
   ngOnInit(): void {
     this.id_categoria = this.route.snapshot.paramMap.get('id_cat')!;
@@ -36,15 +36,6 @@ export class LivroDeleteComponent implements OnInit {
     this.service.findById(this.livro.id!).subscribe((resposta) => {
       this.livro = resposta
     });
-  }
-
-  delete():void {
-    this.service.delete(this.livro.id!).subscribe(() => {
-      this.router.navigate(['categorias/'+`${this.id_categoria}`+'/livros'])
-      this.service.mensagem('Livro deletado com sucesso!')
-    }, err => {
-      this.service.mensagem('Falha ao deletar livro! Tente mais tarde!')
-    })
   }
 
   cancel(){
