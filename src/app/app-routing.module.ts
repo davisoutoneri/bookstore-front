@@ -6,6 +6,7 @@ import { CategoriaReadComponent } from './components/views/categoria/categoria-r
 import { HomeComponent } from './components/views/home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LivroCreateComponent } from './components/views/livro/livro-create/livro-create.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'categorias/:id_cat/livros',
     component: LivroReadAllComponent
+  },
+  {
+    path: 'categorias/:id_cat/livros/create',
+    component: LivroCreateComponent 
   }
 ];
 

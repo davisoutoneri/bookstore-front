@@ -1,4 +1,4 @@
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { LivroService } from './../livro.service';
 import { Livro } from './../livro.model';
 import { Component, OnInit } from '@angular/core';
@@ -18,7 +18,8 @@ export class LivroReadAllComponent implements OnInit {
 
   constructor(
     private service: LivroService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -31,5 +32,9 @@ export class LivroReadAllComponent implements OnInit {
       this.livros = resposta;
       console.log(this.livros);
     })
+  }
+
+  navegarParaCriarLivro() {
+    this.router.navigate(['categorias/'+`${this.id_categoria}`+'/livros/create']);
   }
 }
